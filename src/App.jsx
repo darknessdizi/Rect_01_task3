@@ -3,7 +3,9 @@ import { Calendar } from './components/Calendar/Calendar';
 
 function App() {
   // const now = new Date(2017, 2, 8);
-  // const now = new Date("2024-12-22");
+  // const now = new Date("2024-02-12");
+  // const now = new Date("2024-05-12");
+  // const now = new Date("2024-02-12");
   const now = new Date();
 
   return (
