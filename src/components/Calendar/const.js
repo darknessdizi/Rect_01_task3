@@ -28,4 +28,4 @@ export function findFirstDayMonth(month, year) {
   const date = new Date(year, month, 1);
   const firstDay = date.getDay();
   return firstDay;
-};
+}

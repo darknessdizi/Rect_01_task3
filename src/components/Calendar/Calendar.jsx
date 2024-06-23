@@ -23,11 +23,14 @@ export const Calendar = (props) => {
 
   const result = [];
   let components = [];
-  let week = [<tr>{ components }</tr>];
+  let weekNumber = 1;
+  let week = [<tr key={'week' + weekNumber}>{ components }</tr>];
   let count = 0;
+  let key = 0;
 
   for (let i = 1; i <= numberDays; i += 1) {
     count += 1;
+    key += 1;
 
     if (oldCount > 0) {
       if (i <= oldCount) {
@@ -42,7 +45,7 @@ export const Calendar = (props) => {
         }
 
         const oldNumber = previousNumberDays - oldCount + i;
-        components.push(<td className="ui-datepicker-other-month">{oldNumber}</td>);
+        components.push(<td className="ui-datepicker-other-month" key={key}>{oldNumber}</td>);
         continue;
       } else {
         oldCount = 0;
@@ -52,17 +55,18 @@ export const Calendar = (props) => {
 
     if (i === currentNumber) {
       // Отрисовываем текущий день
-      components.push(<td className="ui-datepicker-today">{i}</td>);
+      components.push(<td className="ui-datepicker-today" key={key}>{i}</td>);
     } else {
       // Добавление простых дней в поле календаря
-      components.push(<td>{i}</td>);
+      components.push(<td key={key}>{i}</td>);
     }
 
     if (count === 7) {
       // Сохраняем заполненную неделю и начинаем новую
       result.push(week);
       components = [];
-      week = [<tr>{ components }</tr>];
+      weekNumber += 1;
+      week = [<tr key={'week' + weekNumber}>{ components }</tr>];
       count = 0;
     }
 
@@ -71,7 +75,7 @@ export const Calendar = (props) => {
       const length = 7 - components.length;
       for (let y = 1; y <= length; y += 1) {
         // Добавляем дни следующего месяца
-        components.push(<td className="ui-datepicker-other-month">{y}</td>);
+        components.push(<td className="ui-datepicker-other-month" key={key}>{y}</td>);
       }
       result.push(week);
     }
