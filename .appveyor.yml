@@ -1,6 +1,6 @@
-image: Visual Studio 2015  # образ для сборки вместо Ubuntu1804
+image: Ubuntu1804  # образ для сборки
 
-stack: node 18  # окружение
+stack: node 20  # окружение
 
 branches:
   only:
