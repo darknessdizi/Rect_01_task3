@@ -1,6 +1,8 @@
 Календарь
 ===
 
+[![Build status](https://ci.appveyor.com/api/projects/status/xx7292xyksei1ddu?svg=true)](https://ci.appveyor.com/project/darknessdizi/rect-01-task3)
+
 Создать React-компонет `Calendar` (функциональный компонент), который бы показывал текущую дату и текущий месяц, как показано на картинке:
 ![Внешний вид компонента](./pic/preview.png)
 
